@@ -1,0 +1,83 @@
+﻿@model SkyBillDisplay.Models.BillViewModel
+@{
+    ViewBag.Title = "Bill";
+}
+
+<section class="jumbotron spacejumbo">
+    <h2>Sky Dummy Bill</h2> 
+    <p>Please click the button below to view your bill</p>      
+    <input type="button" id="btnViewBill" class="btn btn-primary btn-lg" value="View Bill &raquo;">
+
+    @if(!string.IsNullOrEmpty(Model.ErrorMessages))
+    {
+        <p>@Model.ErrorMessages</p>
+    }
+</section>
+
+<div class="jumbotron" id="billcontainer">
+    <div >
+        <section class="row">
+            <div class="col-md-8 active">Bill generation date</div><div class="col-md-4"><b>@Model.statement.generated</b></div>
+            <div class="col-md-8 active">Payment due date</div><div class="col-md-4"><b>@Model.statement.due</b></div>            
+            <div class="col-md-8">Bill Period</div><div class="col-md-4"><b>@Model.statement.period.from - @Model.statement.period.to</b></div>
+            <div class="col-md-8">Bill Total Due</div><div class="col-md-4"><b>@Model.total</b></div>
+        </section>
+        <section class="row">
+            <div class="panel panel-primary">
+                <div class="panel-heading"><b>Subscriptions</b></div>
+                <div class="panel-body">
+                    <div class="col-md-4"><b>Type of Susbcription</b></div><div class="col-md-4"><b>Name</b></div><div class="col-md-4"><b>Cost</b></div>
+                    @foreach (var sub in Model.package.subscriptions)
+                    {
+                        <div class="col-md-4">@sub.type</div><div class="col-md-4">@sub.name</div><div class="col-md-4">@sub.cost</div>
+                    }
+                    <div class="col-md-8"><b>Total</b></div><div class="col-md-4"><b>@Model.package.total</b></div>
+                </div>
+            </div>
+
+        </section>
+        <section class="row">
+            <div class="panel panel-primary">
+                <div class="panel-heading"><b>Call Charges</b></div>
+                <div class="panel-body">
+                    <div class="col-md-4"><b>Number called</b></div><div class="col-md-4"><b>Duration</b></div><div class="col-md-4"><b>Cost</b></div>
+                    @foreach (var call in Model.callCharges.calls)
+                    {
+                        <div class="col-md-4">@call.called</div><div class="col-md-4">@call.duration</div><div class="col-md-4">@call.cost</div>
+                    }
+                    <div class="col-md-8"><b>Total</b></div><div class="col-md-4"><b>@Model.callCharges.total</b></div>
+                </div>
+            </div>
+
+        </section>
+        <section class="row">
+            <div class="panel panel-primary">
+                <div class="panel-heading"><b>Sky Store</b></div>
+                <div class="panel-body">
+                    <div class="col-md-8"><b>Title</b></div><div class="col-md-4"><b>Cost</b></div>
+                    <div class="col-md-8"><b>Rental</b></div><br/>
+                    @foreach (var rental in Model.skyStore.rentals)
+                    {
+                        <div class="col-md-8">@rental.title</div><div class="col-md-4">@rental.cost</div>
+                    }
+                    <div class="col-md-8"><b>Buy and Keep</b></div><br />
+                    @foreach (var item in Model.skyStore.buyAndKeep)
+                    {
+                        <div class="col-md-8">@item.title</div><div class="col-md-4">@item.cost</div>
+                    }
+                    <div class="col-md-8"><b>Total</b></div><div class="col-md-4"><b>@Model.skyStore.total</b></div>
+                </div>
+            </div>
+
+        </section>
+
+    </div>   
+</div>
+
+<script>
+    $(document).ready(function(){
+        $('#btnViewBill').on('click', function () {
+            $('#billcontainer').show();
+        });
+    });
+</script>

@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkyBillDisplay", "SkyBillDisplay\SkyBillDisplay.csproj", "{B3AEDE9D-140A-4F74-9393-21B018510B2C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkyBillDisplay.Tests", "SkyBillDisplay.Tests\SkyBillDisplay.Tests.csproj", "{49484A6B-5249-4200-81B2-1150AA5022A2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B3AEDE9D-140A-4F74-9393-21B018510B2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3AEDE9D-140A-4F74-9393-21B018510B2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3AEDE9D-140A-4F74-9393-21B018510B2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3AEDE9D-140A-4F74-9393-21B018510B2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49484A6B-5249-4200-81B2-1150AA5022A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49484A6B-5249-4200-81B2-1150AA5022A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49484A6B-5249-4200-81B2-1150AA5022A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49484A6B-5249-4200-81B2-1150AA5022A2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
