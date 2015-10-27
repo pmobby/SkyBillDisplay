@@ -41,26 +41,7 @@ namespace SkyBillDisplay.Controllers
             {
                 billvm.ErrorMessages = e.ToString();
             }
-
-
-            //solution 2
-            //BillViewModel billvm = null;
-            //var urlendpoint = "http://safe-plains-5453.herokuapp.com/bill.json";
-            //try
-            //{
-            //    using (var wclient = new WebClient())
-            //    {
-            //        WebProxy serverProxy = new WebProxy("165.139.149.169:3128");
-            //        //serverProxy.Address = new Uri("165.139.149.169:3128");
-            //        wclient.Proxy = serverProxy;
-            //        var data = wclient.DownloadString(urlendpoint);
-            //        billvm = JsonConvert.DeserializeObject<BillViewModel>(data);
-            //    }
-            //}
-            //catch (Exception e)
-            //{
-            //    Response.Write(e.ToString());
-            //}
+           
             return billvm;
         }
     }
